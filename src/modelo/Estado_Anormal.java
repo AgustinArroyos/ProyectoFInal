@@ -10,5 +10,30 @@ package modelo;
  * @author sring
  */
 public class Estado_Anormal {
+    long codEstadoAnor;
+    String situacion;
+
+    public Estado_Anormal(long codEstadoAnor, String situacion) {
+        this.codEstadoAnor = codEstadoAnor;
+        this.situacion = situacion;
+    }
+
+    public long getCodEstadoAnor() {
+        return codEstadoAnor;
+    }
+
+    public void setCodEstadoAnor(long codEstadoAnor) {
+        this.codEstadoAnor = codEstadoAnor;
+    }
+
+    public String getSituacion() {
+        return situacion;
+    }
+
+    public void setSituacion(String situacion) {
+        this.situacion = situacion;
+    }
+    
+    
     
 }
