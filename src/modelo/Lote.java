@@ -10,5 +10,5 @@ package modelo;
  * @author sring
  */
 public class Lote {
-    
+    long casaviejas;
 }
