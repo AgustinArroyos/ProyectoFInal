@@ -10,5 +10,30 @@ package modelo;
  * @author sring
  */
 public class Estado {
+    long codEstado;
+    String nombreEstado;
+
+    public Estado(long codEstado, String nombreEstado) {
+        this.codEstado = codEstado;
+        this.nombreEstado = nombreEstado;
+    }
+
+    public long getCodEstado() {
+        return codEstado;
+    }
+
+    public void setCodEstado(long codEstado) {
+        this.codEstado = codEstado;
+    }
+
+    public String getNombreEstado() {
+        return nombreEstado;
+    }
+
+    public void setNombreEstado(String nombreEstado) {
+        this.nombreEstado = nombreEstado;
+    }
+    
+    
     
 }
