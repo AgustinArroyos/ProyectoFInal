@@ -11,4 +11,5 @@ package modelo;
  */
 public class Lote {
     long casaviejas;
+    long casitas;
 }
