@@ -5,17 +5,22 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 
+@Entity
 
-public class Estado {
-        
+public class Estado implements Serializable {
+    @Id    
     long codEstado;
-        
-        String nombreEstado;
+    @Basic 
+    String nombreEstado;
+
+    public Estado() {
+    }
 
     public Estado(long codEstado, String nombreEstado) {
         this.codEstado = codEstado;

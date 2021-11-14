@@ -8,6 +8,7 @@ package controlador;
 import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import modelo.Cultivo;
+import modelo.Estado;
 import modelo.Tipo_suelo;
 
 /**
@@ -46,6 +47,22 @@ public class Controladora {
       
         
         controlPersis.altaTiposuelo(tipo);
+  
+    
+    }
+    
+    
+     public void altaEstados (long codigoEstado, String nombreEstado ){
+      
+        Estado estado = new Estado();
+        
+        estado.setCodEstado(codigoEstado);
+        estado.setNombreEstado(nombreEstado);
+        
+        
+        
+        
+        controlPersis.altaEstado(estado);
   
     
     }

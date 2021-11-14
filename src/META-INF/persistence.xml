@@ -25,6 +25,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>modelo.Tipo_suelo</class>
     <class>modelo.Cultivo</class>
+    <class>modelo.Estado</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tpfinal?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
