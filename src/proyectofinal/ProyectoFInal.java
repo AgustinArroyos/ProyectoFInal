@@ -5,6 +5,8 @@
  */
 package proyectofinal;
 
+import vistas.Cultivo;
+
 /**
  *
  * @author sring
@@ -15,7 +17,15 @@ public class ProyectoFInal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       long casa;
+       
+        Cultivo Pantalla = new Cultivo();
+        Pantalla.setVisible(true);
+        Pantalla.setLocationRelativeTo(null);
+        
+        
+        
+        
+             
     }
     
 }

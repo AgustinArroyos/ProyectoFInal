@@ -7,7 +7,7 @@ package modelo;
 
 import javax.persistence.Entity;
 
-@Entity
+
 public class Laboreo {
     
     long codLaboreo;

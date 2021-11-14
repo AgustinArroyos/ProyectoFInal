@@ -7,7 +7,7 @@ package modelo;
 
 import javax.persistence.Entity;
 
-@Entity
+
 public class Estado_Anormal {
     long codEstadoAnor;
     String situacion;

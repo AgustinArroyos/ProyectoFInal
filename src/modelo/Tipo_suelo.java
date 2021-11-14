@@ -8,7 +8,7 @@ package modelo;
 import java.util.ArrayList;
 import javax.persistence.Entity;
 
-@Entity
+
 public class Tipo_suelo {
     
     long codTipoSuelo;

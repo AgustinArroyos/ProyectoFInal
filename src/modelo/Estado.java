@@ -9,12 +9,12 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+
 
 public class Estado {
-        @Id
+        
     long codEstado;
-        @Basic
+        
         String nombreEstado;
 
     public Estado(long codEstado, String nombreEstado) {

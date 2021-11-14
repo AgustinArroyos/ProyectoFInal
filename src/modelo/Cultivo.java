@@ -10,9 +10,11 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
+
+
+
 @Entity
-
-
 public class Cultivo implements Serializable {
     @Id
     long codCultivo;
@@ -23,11 +25,7 @@ public class Cultivo implements Serializable {
     }
 
     
-    public Cultivo(long codCultivo, String nombreCUltivo) {
-        this.codCultivo = codCultivo;
-        this.nombreCUltivo = nombreCUltivo;
-    }
-
+   
     public long getCodCultivo() {
         return codCultivo;
     }

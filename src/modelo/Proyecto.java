@@ -8,7 +8,7 @@ package modelo;
 import java.util.Date;
 import javax.persistence.Entity;
 
-@Entity
+
 public class Proyecto {
     
     long codProyecto;

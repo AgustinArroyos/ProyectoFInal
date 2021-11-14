@@ -9,13 +9,13 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+
 
 public class Campo {
-    @Id
+   
     long codCampo;
     
-    @Basic
+    
     String nombre_campo;
     String ubicacionCampo;
     Estado estado;

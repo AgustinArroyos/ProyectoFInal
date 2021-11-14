@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Persistencia;
 
 import Persistencia.exceptions.NonexistentEntityException;
@@ -13,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import modelo.Cultivo;
@@ -32,6 +29,16 @@ public class CultivoJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
+    public CultivoJpaController() {
+        
+      emf =   Persistence.createEntityManagerFactory("DepostioPU");
+      
+    }
+
+    
+    
+    
+    
     public void create(Cultivo cultivo) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {

@@ -7,7 +7,7 @@ package modelo;
 
 import javax.persistence.Entity;
 
-@Entity
+
 public class Orden {
     int codOrden;
     String etapa;

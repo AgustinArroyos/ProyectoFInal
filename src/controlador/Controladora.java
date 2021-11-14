@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import Persistencia.ControladoraPersistencia;
 import modelo.Cultivo;
 
 /**
@@ -12,6 +13,8 @@ import modelo.Cultivo;
  * @author sring
  */
 public class Controladora {
+    
+    ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     
     
     public void altaCultivo ( long codCultivo, String nombreCUltivo){
@@ -22,7 +25,7 @@ public class Controladora {
         cul.setNombreCUltivo(nombreCUltivo);
         cul.setCodCultivo(codCultivo);
         
-        
+        controlPersis.altaCultivo(cul);
         
     
     }
