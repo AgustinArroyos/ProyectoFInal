@@ -13,14 +13,10 @@ import javax.persistence.Entity;
 public class Cultivo {
     long codCultivo;
     String nombreCUltivo;
-    Orden orden;
-    Tipo_suelo tiposuelo;
 
-    public Cultivo(long codCultivo, String nombreCUltivo, Orden orden, Tipo_suelo tiposuelo) {
+    public Cultivo(long codCultivo, String nombreCUltivo) {
         this.codCultivo = codCultivo;
         this.nombreCUltivo = nombreCUltivo;
-        this.orden = orden;
-        this.tiposuelo = tiposuelo;
     }
 
     public long getCodCultivo() {
@@ -38,24 +34,9 @@ public class Cultivo {
     public void setNombreCUltivo(String nombreCUltivo) {
         this.nombreCUltivo = nombreCUltivo;
     }
+    
 
-    public Orden getOrden() {
-        return orden;
-    }
-
-    public void setOrden(Orden orden) {
-        this.orden = orden;
-    }
-
-    public Tipo_suelo getTiposuelo() {
-        return tiposuelo;
-    }
-
-    public void setTiposuelo(Tipo_suelo tiposuelo) {
-        this.tiposuelo = tiposuelo;
-    }
-
-
+   
 
     
     
