@@ -5,6 +5,8 @@
  */
 package controlador;
 
+import modelo.Cultivo;
+
 /**
  *
  * @author sring
@@ -14,11 +16,11 @@ public class Controladora {
     
     public void altaCultivo ( long codCultivo, String nombreCUltivo){
         
+
         
-        
-        
-        
-        
+        Cultivo cul = new Cultivo();
+        cul.setNombreCUltivo(nombreCUltivo);
+        cul.setCodCultivo(codCultivo);
         
         
         

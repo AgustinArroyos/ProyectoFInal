@@ -147,13 +147,11 @@ public class Cultivo extends javax.swing.JFrame {
     private void agregarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarbtnActionPerformed
         
         
+        String nombre = nombre_cultivo_txt.getText();
+        Long codigo = Long.parseLong(tfCodCultivo.getText());
+     
         
-        
-        
-        
-        
-        
-        control.altaCultivo(WIDTH, nombreCUltivo);
+        control.altaCultivo(codigo, nombre);
     }//GEN-LAST:event_agregarbtnActionPerformed
 
     private void tfCodCultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodCultivoActionPerformed

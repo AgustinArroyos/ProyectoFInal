@@ -14,6 +14,10 @@ public class Cultivo {
     long codCultivo;
     String nombreCUltivo;
 
+    public Cultivo() {
+    }
+
+    
     public Cultivo(long codCultivo, String nombreCUltivo) {
         this.codCultivo = codCultivo;
         this.nombreCUltivo = nombreCUltivo;
