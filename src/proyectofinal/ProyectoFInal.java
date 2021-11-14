@@ -19,7 +19,7 @@ public class ProyectoFInal {
      */
     public static void main(String[] args) {
        
-        Cultivo Pantalla = new Cultivo();
+        
         menu men = new menu();
         
         men.setVisible(true);

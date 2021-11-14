@@ -20,6 +20,7 @@ public class Cultivo extends javax.swing.JFrame {
     
     public Cultivo() {
         initComponents();
+        setVisible(true);
         control = new Controladora();
     }
 
