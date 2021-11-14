@@ -41,6 +41,36 @@ public class ControladoraPersistencia {
      
                 
                 }
-            
+          
+        
     }
+    
+      public Tipo_suelo buscarTiposuelo(long codsuelo){
+     
+          Tipo_suelo tipo = new Tipo_suelo();
+          try{
+             
+            
+            tipo = jpaTipo_suelo.findTipo_suelo(codsuelo);
+        return tipo;
+        
+        
+        }
+        catch(Exception ex){
+        Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE,null,ex);
+     
+                
+                }
+          
+        
+           return tipo; 
+       
+    }
+     
+     
+     
+     
+     
+     
+     
 }

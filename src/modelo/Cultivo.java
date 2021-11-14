@@ -25,6 +25,14 @@ public class Cultivo implements Serializable {
     @ManyToOne
     Tipo_suelo suelo;
 
+    public Tipo_suelo getSuelo() {
+        return suelo;
+    }
+
+    public void setSuelo(Tipo_suelo suelo) {
+        this.suelo = suelo;
+    }
+
     public Cultivo() {
     }
 

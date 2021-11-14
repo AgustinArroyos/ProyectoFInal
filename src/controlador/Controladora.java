@@ -19,14 +19,21 @@ public class Controladora {
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     
     
-    public void altaCultivo ( long codCultivo, String nombreCUltivo){
-    /*  
+    public void altaCultivo ( String nombreCUltivo ,long codCultivo , long codsuelo){
+    
+        Tipo_suelo suelo1 = new Tipo_suelo();
+        
+        
+         suelo1 = controlPersis.buscarTiposuelo(codsuelo);
+        
+        
         Cultivo cul = new Cultivo();
         cul.setNombreCUltivo(nombreCUltivo);
         cul.setCodCultivo(codCultivo);
+        cul.setSuelo(suelo1);
         
         controlPersis.altaCultivo(cul);
-  */
+  
     
     }
     
@@ -45,6 +52,7 @@ public class Controladora {
     
     
     
+       
     
     
     
