@@ -5,13 +5,18 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 
 
-public class Cultivo {
+public class Cultivo implements Serializable {
+    @Id
     long codCultivo;
+    @Basic
     String nombreCUltivo;
 
     public Cultivo() {
