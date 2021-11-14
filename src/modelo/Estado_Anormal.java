@@ -5,10 +5,9 @@
  */
 package modelo;
 
-/**
- *
- * @author sring
- */
+import javax.persistence.Entity;
+
+@Entity
 public class Estado_Anormal {
     long codEstadoAnor;
     String situacion;

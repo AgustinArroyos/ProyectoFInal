@@ -5,10 +5,11 @@
  */
 package modelo;
 
-/**
- *
- * @author sring
- */
+import javax.persistence.Entity;
+
+@Entity
+
+
 public class Cultivo {
     long codCultivo;
     String nombreCUltivo;
