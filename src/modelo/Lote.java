@@ -13,13 +13,11 @@ public class Lote {
     long numeroDeLote;
     int entero;
     Tipo_suelo tiposuelo;
-    ArrayList<Campo> campos;
 
-    public Lote(long numeroDeLote, int entero, Tipo_suelo tiposuelo, ArrayList<Campo> campos) {
+    public Lote(long numeroDeLote, int entero, Tipo_suelo tiposuelo) {
         this.numeroDeLote = numeroDeLote;
         this.entero = entero;
         this.tiposuelo = tiposuelo;
-        this.campos = campos;
     }
 
     public long getNumeroDeLote() {
@@ -45,16 +43,6 @@ public class Lote {
     public void setTiposuelo(Tipo_suelo tiposuelo) {
         this.tiposuelo = tiposuelo;
     }
-
-    public ArrayList<Campo> getCampos() {
-        return campos;
-    }
-
-    public void setCampos(ArrayList<Campo> campos) {
-        this.campos = campos;
-    }
-    
-    
-    
+  
     
 }

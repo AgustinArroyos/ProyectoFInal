@@ -6,6 +6,7 @@
 package proyectofinal;
 
 import vistas.Cultivo;
+import vistas.menu;
 
 /**
  *
@@ -19,8 +20,10 @@ public class ProyectoFInal {
     public static void main(String[] args) {
        
         Cultivo Pantalla = new Cultivo();
-        Pantalla.setVisible(true);
-        Pantalla.setLocationRelativeTo(null);
+        menu men = new menu();
+        
+        men.setVisible(true);
+        men.setLocationRelativeTo(null);
         
         
         

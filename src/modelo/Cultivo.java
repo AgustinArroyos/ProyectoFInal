@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 
@@ -20,6 +21,9 @@ public class Cultivo implements Serializable {
     long codCultivo;
     @Basic
     String nombreCUltivo;
+    
+    @ManyToOne
+    Tipo_suelo suelo;
 
     public Cultivo() {
     }

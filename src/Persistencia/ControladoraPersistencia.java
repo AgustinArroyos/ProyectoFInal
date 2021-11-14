@@ -8,6 +8,7 @@ package Persistencia;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Cultivo;
+import modelo.Tipo_suelo;
 
 /**
  *
@@ -15,7 +16,9 @@ import modelo.Cultivo;
  */
 public class ControladoraPersistencia {
     
-    CultivoJpaController jpaCultivo  =   new CultivoJpaController();
+    
+    CultivoJpaController jpaCultivo = new CultivoJpaController();
+    Tipo_sueloJpaController jpaTipo_suelo = new Tipo_sueloJpaController();
     
     public void altaCultivo(Cultivo cul){
         try{
@@ -26,7 +29,18 @@ public class ControladoraPersistencia {
      
                 
                 }
-        
-         
+            
+    }
+    
+     public void altaTiposuelo(Tipo_suelo tipo){
+        try{
+        jpaTipo_suelo.create(tipo);
+        }
+        catch(Exception ex){
+        Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE,null,ex);
+     
+                
+                }
+            
     }
 }

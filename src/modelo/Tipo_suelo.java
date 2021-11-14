@@ -5,24 +5,26 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
-public class Tipo_suelo {
-    
+@Entity
+
+public class Tipo_suelo implements Serializable {
+    @Id
     long codTipoSuelo;
-    
+    @Basic
     String Descripcion;
-    
-     ArrayList<Cultivo> cultivos;
 
-    public Tipo_suelo(long codTipoSuelo, String Descripcion, ArrayList<Cultivo> cultivos) {
-        this.codTipoSuelo = codTipoSuelo;
-        this.Descripcion = Descripcion;
-        this.cultivos = cultivos;
+    public Tipo_suelo() {
     }
 
+    
     public long getCodTipoSuelo() {
         return codTipoSuelo;
     }
@@ -38,14 +40,8 @@ public class Tipo_suelo {
     public void setDescripcion(String Descripcion) {
         this.Descripcion = Descripcion;
     }
-
-    public ArrayList<Cultivo> getCultivos() {
-        return cultivos;
-    }
-
-    public void setCultivos(ArrayList<Cultivo> cultivos) {
-        this.cultivos = cultivos;
-    }
+    
+    
      
       
 }

@@ -6,7 +6,9 @@
 package controlador;
 
 import Persistencia.ControladoraPersistencia;
+import java.util.ArrayList;
 import modelo.Cultivo;
+import modelo.Tipo_suelo;
 
 /**
  *
@@ -18,16 +20,36 @@ public class Controladora {
     
     
     public void altaCultivo ( long codCultivo, String nombreCUltivo){
-        
-
-        
+    /*  
         Cultivo cul = new Cultivo();
         cul.setNombreCUltivo(nombreCUltivo);
         cul.setCodCultivo(codCultivo);
         
         controlPersis.altaCultivo(cul);
-        
+  */
     
     }
+    
+     
+    public void altatipoSuelo ( long codTipoSuelo, String Descripcion){
+      
+        Tipo_suelo tipo = new Tipo_suelo();
+      tipo.setCodTipoSuelo(codTipoSuelo);
+      tipo.setDescripcion(Descripcion);
+      
+        
+        controlPersis.altaTiposuelo(tipo);
+  
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
