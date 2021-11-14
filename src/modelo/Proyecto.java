@@ -6,11 +6,9 @@
 package modelo;
 
 import java.util.Date;
+import javax.persistence.Entity;
 
-/**
- *
- * @author sring
- */
+@Entity
 public class Proyecto {
     
     long codProyecto;

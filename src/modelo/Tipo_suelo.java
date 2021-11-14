@@ -6,11 +6,9 @@
 package modelo;
 
 import java.util.ArrayList;
+import javax.persistence.Entity;
 
-/**
- *
- * @author sring
- */
+@Entity
 public class Tipo_suelo {
     
     long codTipoSuelo;

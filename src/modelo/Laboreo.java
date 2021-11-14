@@ -5,10 +5,9 @@
  */
 package modelo;
 
-/**
- *
- * @author sring
- */
+import javax.persistence.Entity;
+
+@Entity
 public class Laboreo {
     
     long codLaboreo;

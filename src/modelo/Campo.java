@@ -5,17 +5,23 @@
  */
 package modelo;
 
-/**
- *
- * @author sring
- */
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Campo {
+    @Id
     long codCampo;
+    
+    @Basic
     String nombre_campo;
     String ubicacionCampo;
     Estado estado;
     Lote lote;
 
+    
     public Campo(long codCampo, String nombre_campo, String ubicacionCampo, Estado estado, Lote lote) {
         this.codCampo = codCampo;
         this.nombre_campo = nombre_campo;
