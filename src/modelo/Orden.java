@@ -12,9 +12,9 @@ public class Orden {
     int codOrden;
     String etapa;
     Laboreo laboreo;
-    Cultivo cultivo;
+    Cultivos cultivo;
 
-    public Orden(int codOrden, String etapa, Laboreo laboreo, Cultivo cultivo) {
+    public Orden(int codOrden, String etapa, Laboreo laboreo, Cultivos cultivo) {
         this.codOrden = codOrden;
         this.etapa = etapa;
         this.laboreo = laboreo;
@@ -45,11 +45,11 @@ public class Orden {
         this.laboreo = laboreo;
     }
 
-    public Cultivo getCultivo() {
+    public Cultivos getCultivo() {
         return cultivo;
     }
 
-    public void setCultivo(Cultivo cultivo) {
+    public void setCultivo(Cultivos cultivo) {
         this.cultivo = cultivo;
     }
     

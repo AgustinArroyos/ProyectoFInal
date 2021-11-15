@@ -6,15 +6,15 @@
 package Dao;
 import java.util.List;
 
-import  modelo.Cultivo;
+import  modelo.Cultivos;
 /**
  *
  * @author sring
  */
 public interface CultivoDao {
     
-    void insertar(Cultivo c);
+    void insertar(Cultivos c);
     
-    List <Cultivo> obtenerTodos(); 
+    List <Cultivos> obtenerTodos(); 
     
 }

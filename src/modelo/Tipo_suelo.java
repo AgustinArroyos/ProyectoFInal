@@ -22,7 +22,7 @@ public class Tipo_suelo implements Serializable {
     @Basic
     String Descripcion;
     @OneToMany(mappedBy = "tiposuelo")
-    private List<Lote> lotes;
+    private List<Lotes> lotes;
 
     public Tipo_suelo() {
     }

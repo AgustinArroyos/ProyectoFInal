@@ -6,6 +6,9 @@
 package vistas;
 
 import controlador.Controladora;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import modelo.Tipo_suelo;
 
 /**
  *
@@ -22,6 +25,17 @@ public class TipoDeSuelo extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         control = new Controladora();
+         DefaultListModel model = new DefaultListModel<>();  //Cultivos setea un Default list (contiene tipos de suelo)
+     List <Tipo_suelo> listaSuelos = control.TraerSuelos();  //crea y setea un Default list (contiene tipos de suelo)
+     
+
+    for (Tipo_suelo suelo : listaSuelos){
+        model.addElement( suelo.getDescripcion() + " Codigo: "+suelo.getCodTipoSuelo() );
+
+    }
+    jListsuelos.setModel(model);
+    
+    
     }
 
     /**
@@ -41,6 +55,9 @@ public class TipoDeSuelo extends javax.swing.JFrame {
         atrasbtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         TfcodigoSuelo = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListsuelos = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +81,15 @@ public class TipoDeSuelo extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Codigo Suelo");
+
+        jListsuelos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jListsuelos);
+
+        jLabel2.setText("TIpos de suelo Registrados");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,22 +116,34 @@ public class TipoDeSuelo extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(descripcion_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                                     .addComponent(TfcodigoSuelo))))
-                        .addContainerGap(37, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(202, 202, 202))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(TfcodigoSuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(descripcion_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(TfcodigoSuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(descripcion_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(56, 56, 56))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agregarbtn)
                     .addComponent(atrasbtn))
@@ -116,7 +154,9 @@ public class TipoDeSuelo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,13 +167,24 @@ public class TipoDeSuelo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarbtnActionPerformed
-         
+        DefaultListModel model3 = new DefaultListModel<>();
+
         Long codigo = Long.parseLong(TfcodigoSuelo.getText());
         
         
         String Descripcion = descripcion_txt.getText();
      
         control.altatipoSuelo(codigo, Descripcion);
+         List <Tipo_suelo> listasuelos = control.TraerSuelos();
+        
+       
+        jListsuelos.clearSelection();
+        
+        for (Tipo_suelo suelos : listasuelos){
+        model3.addElement( suelos.getDescripcion() + " Codigo: "+suelos.getCodTipoSuelo() );
+
+        }
+        jListsuelos.setModel(model3);
     }//GEN-LAST:event_agregarbtnActionPerformed
 
     private void atrasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasbtnActionPerformed
@@ -181,8 +232,11 @@ public class TipoDeSuelo extends javax.swing.JFrame {
     private javax.swing.JButton atrasbtn;
     public javax.swing.JTextField descripcion_txt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    public javax.swing.JList<String> jListsuelos;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,9 +9,9 @@ import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Campo;
-import modelo.Cultivo;
+import modelo.Cultivos;
 import modelo.Estado;
-import modelo.Lote;
+import modelo.Lotes;
 import modelo.Tipo_suelo;
 
 /**
@@ -31,7 +31,7 @@ public class Controladora {
          suelo1 = controlPersis.buscarTiposuelo(codsuelo);
         
         
-        Cultivo cul = new Cultivo();
+        Cultivos cul = new Cultivos();
         cul.setNombreCUltivo(nombreCUltivo);
         cul.setCodCultivo(codCultivo);
         cul.setSuelo(suelo1);
@@ -80,7 +80,7 @@ public class Controladora {
         suelo1 = controlPersis.buscarTiposuelo(codsuelo);
         
         
-        Lote lot = new Lote();
+        Lotes lot = new Lotes();
        
         lot.setEntero(superficie);
         lot.setNumeroDeLote(idlote);
@@ -97,7 +97,7 @@ public class Controladora {
     
         Campo campo = new Campo();
         Estado estado = new Estado();
-        Lote lote = new Lote();
+        Lotes lote = new Lotes();
         
         estado = controlPersis.buscarEstado(codigoEstado);
         lote = controlPersis.buscarLote(codigoLote);
@@ -126,6 +126,20 @@ public class Controladora {
 
 
    }
-    
+     public List <Cultivos> TraerCultivos(){
+
+       return controlPersis.TraerCultivos();
+
+
+   }
+     public List <Lotes> TraerLote(){
+
+       return controlPersis.TraerLotes();
+
+
+   }
+     
+     
+     
     
 }

@@ -16,7 +16,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import modelo.Lote;
+import modelo.Lotes;
 
 /**
  *
@@ -35,7 +35,7 @@ public class LoteJpaController implements Serializable {
         return emf.createEntityManager();
     }
 
-    public void create(Lote lote) throws PreexistingEntityException, Exception {
+    public void create(Lotes lote) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -54,7 +54,7 @@ public class LoteJpaController implements Serializable {
         }
     }
 
-    public void edit(Lote lote) throws NonexistentEntityException, Exception {
+    public void edit(Lotes lote) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -82,9 +82,9 @@ public class LoteJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Lote lote;
+            Lotes lote;
             try {
-                lote = em.getReference(Lote.class, id);
+                lote = em.getReference(Lotes.class, id);
                 lote.getNumeroDeLote();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The lote with id " + id + " no longer exists.", enfe);
@@ -98,19 +98,19 @@ public class LoteJpaController implements Serializable {
         }
     }
 
-    public List<Lote> findLoteEntities() {
+    public List<Lotes> findLoteEntities() {
         return findLoteEntities(true, -1, -1);
     }
 
-    public List<Lote> findLoteEntities(int maxResults, int firstResult) {
+    public List<Lotes> findLoteEntities(int maxResults, int firstResult) {
         return findLoteEntities(false, maxResults, firstResult);
     }
 
-    private List<Lote> findLoteEntities(boolean all, int maxResults, int firstResult) {
+    private List<Lotes> findLoteEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Lote.class));
+            cq.select(cq.from(Lotes.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -122,10 +122,10 @@ public class LoteJpaController implements Serializable {
         }
     }
 
-    public Lote findLote(long id) {
+    public Lotes findLote(long id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Lote.class, id);
+            return em.find(Lotes.class, id);
         } finally {
             em.close();
         }
@@ -135,7 +135,7 @@ public class LoteJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Lote> rt = cq.from(Lote.class);
+            Root<Lotes> rt = cq.from(Lotes.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

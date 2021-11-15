@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class Cultivo implements Serializable {
+public class Cultivos implements Serializable {
     @Id
     long codCultivo;
     @Basic
@@ -30,7 +30,7 @@ public class Cultivo implements Serializable {
         this.suelo = suelo;
     }
 
-    public Cultivo() {
+    public Cultivos() {
     }
 
     

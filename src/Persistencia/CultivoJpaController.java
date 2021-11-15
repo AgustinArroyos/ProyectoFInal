@@ -16,7 +16,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import modelo.Cultivo;
+import modelo.Cultivos;
 
 /**
  *
@@ -38,7 +38,7 @@ public class CultivoJpaController implements Serializable {
     }
 
     
-    public void create(Cultivo cultivo) throws PreexistingEntityException, Exception {
+    public void create(Cultivos cultivo) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -57,7 +57,7 @@ public class CultivoJpaController implements Serializable {
         }
     }
 
-    public void edit(Cultivo cultivo) throws NonexistentEntityException, Exception {
+    public void edit(Cultivos cultivo) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -85,9 +85,9 @@ public class CultivoJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Cultivo cultivo;
+            Cultivos cultivo;
             try {
-                cultivo = em.getReference(Cultivo.class, id);
+                cultivo = em.getReference(Cultivos.class, id);
                 cultivo.getCodCultivo();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The cultivo with id " + id + " no longer exists.", enfe);
@@ -101,19 +101,19 @@ public class CultivoJpaController implements Serializable {
         }
     }
 
-    public List<Cultivo> findCultivoEntities() {
+    public List<Cultivos> findCultivoEntities() {
         return findCultivoEntities(true, -1, -1);
     }
 
-    public List<Cultivo> findCultivoEntities(int maxResults, int firstResult) {
+    public List<Cultivos> findCultivoEntities(int maxResults, int firstResult) {
         return findCultivoEntities(false, maxResults, firstResult);
     }
 
-    private List<Cultivo> findCultivoEntities(boolean all, int maxResults, int firstResult) {
+    private List<Cultivos> findCultivoEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Cultivo.class));
+            cq.select(cq.from(Cultivos.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -125,10 +125,10 @@ public class CultivoJpaController implements Serializable {
         }
     }
 
-    public Cultivo findCultivo(long id) {
+    public Cultivos findCultivo(long id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Cultivo.class, id);
+            return em.find(Cultivos.class, id);
         } finally {
             em.close();
         }
@@ -138,7 +138,7 @@ public class CultivoJpaController implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<Cultivo> rt = cq.from(Cultivo.class);
+            Root<Cultivos> rt = cq.from(Cultivos.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

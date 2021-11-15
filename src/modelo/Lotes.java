@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Lote implements Serializable {
+public class Lotes implements Serializable {
     @Id
     long numeroDeLote;
     @Basic
@@ -26,10 +26,10 @@ public class Lote implements Serializable {
     @OneToMany(mappedBy = "lote")
     private List<Campo> campos;
 
-    public Lote() {
+    public Lotes() {
     }
 
-    public Lote(long numeroDeLote, int entero, Tipo_suelo tiposuelo) {
+    public Lotes(long numeroDeLote, int entero, Tipo_suelo tiposuelo) {
         this.numeroDeLote = numeroDeLote;
         this.entero = entero;
         this.tiposuelo = tiposuelo;

@@ -65,6 +65,11 @@ public class Campo extends javax.swing.JFrame {
         });
 
         atrasbtn.setText("ATRAS");
+        atrasbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasbtnActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel5.setText("AGREGAR CAMPO");
@@ -152,6 +157,10 @@ public class Campo extends javax.swing.JFrame {
         control.altaCampo(codigocampo, nombre, Ubicacion, codigoLote, codigoEstado);
         
     }//GEN-LAST:event_agregarbtnActionPerformed
+
+    private void atrasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasbtnActionPerformed
+        dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_atrasbtnActionPerformed
 
     /**
      * @param args the command line arguments

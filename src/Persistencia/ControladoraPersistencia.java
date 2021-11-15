@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Campo;
-import modelo.Cultivo;
+import modelo.Cultivos;
 import modelo.Estado;
-import modelo.Lote;
+import modelo.Lotes;
 import modelo.Tipo_suelo;
 
 /**
@@ -27,7 +27,7 @@ public class ControladoraPersistencia {
     LoteJpaController jpaLote = new LoteJpaController();
     CampoJpaController jpaCampo = new CampoJpaController();
     
-    public void altaCultivo(Cultivo cul){
+    public void altaCultivo(Cultivos cul){
         try{
         jpaCultivo.create(cul);
         }
@@ -88,7 +88,7 @@ public class ControladoraPersistencia {
       
       
       
-      public void altalote(Lote lote){
+      public void altalote(Lotes lote){
         try{
         jpaLote.create(lote);
         }
@@ -122,9 +122,9 @@ public class ControladoraPersistencia {
        
        
        
-        public Lote buscarLote(long codlote){
+        public Lotes buscarLote(long codlote){
      
-          Lote lote = new Lote();
+          Lotes lote = new Lotes();
           
           try{
              
@@ -172,6 +172,20 @@ public class ControladoraPersistencia {
      public List <Tipo_suelo> TraerSuelos(){
 
        return jpaTipo_suelo.findTipo_sueloEntities();
+
+   }
+     
+     
+      public List <Cultivos> TraerCultivos(){
+
+          
+       return jpaCultivo.findCultivoEntities();
+
+   }
+       public List <Lotes> TraerLotes(){
+
+          
+       return jpaLote.findLoteEntities();
 
    }
      

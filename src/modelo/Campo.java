@@ -30,13 +30,13 @@ public class Campo implements Serializable {
     
    
     @OneToOne
-    Lote lote;
+    Lotes lote;
 
     public Campo() {
     }
 
     
-    public Campo(long codCampo, String nombre_campo, String ubicacionCampo, Estado estado, Lote lote) {
+    public Campo(long codCampo, String nombre_campo, String ubicacionCampo, Estado estado, Lotes lote) {
         this.codCampo = codCampo;
         this.nombre_campo = nombre_campo;
         this.ubicacionCampo = ubicacionCampo;
@@ -77,11 +77,11 @@ public class Campo implements Serializable {
         this.estado = estado;
     }
 
-    public Lote getLote() {
+    public Lotes getLote() {
         return lote;
     }
 
-    public void setLote(Lote lote) {
+    public void setLote(Lotes lote) {
         this.lote = lote;
     }
     

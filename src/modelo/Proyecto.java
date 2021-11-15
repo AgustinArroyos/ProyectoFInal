@@ -14,9 +14,9 @@ public class Proyecto {
     long codProyecto;
     Date Fechainicio;
     Estado_Anormal estadoanormal;
-    Lote lote;
+    Lotes lote;
 
-    public Proyecto(long codProyecto, Date Fechainicio, Estado_Anormal estadoanormal, Lote lote) {
+    public Proyecto(long codProyecto, Date Fechainicio, Estado_Anormal estadoanormal, Lotes lote) {
         this.codProyecto = codProyecto;
         this.Fechainicio = Fechainicio;
         this.estadoanormal = estadoanormal;
@@ -47,11 +47,11 @@ public class Proyecto {
         this.estadoanormal = estadoanormal;
     }
 
-    public Lote getLote() {
+    public Lotes getLote() {
         return lote;
     }
 
-    public void setLote(Lote lote) {
+    public void setLote(Lotes lote) {
         this.lote = lote;
     }
     
