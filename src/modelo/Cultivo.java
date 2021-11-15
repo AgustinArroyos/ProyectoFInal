@@ -12,9 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 
-
-
-
 @Entity
 public class Cultivo implements Serializable {
     @Id
@@ -53,10 +50,5 @@ public class Cultivo implements Serializable {
     public void setNombreCUltivo(String nombreCUltivo) {
         this.nombreCUltivo = nombreCUltivo;
     }
-    
-
-   
-
-    
     
 }

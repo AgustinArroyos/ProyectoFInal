@@ -7,6 +7,7 @@ package controlador;
 
 import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
+import java.util.List;
 import modelo.Campo;
 import modelo.Cultivo;
 import modelo.Estado;
@@ -119,7 +120,12 @@ public class Controladora {
     }
     
     
-    
+    public List <Tipo_suelo> TraerSuelos(){
+
+       return controlPersis.TraerSuelos();
+
+
+   }
     
     
 }

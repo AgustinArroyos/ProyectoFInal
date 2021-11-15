@@ -42,6 +42,7 @@ public class Tipo_sueloJpaController implements Serializable {
     public void create(Tipo_suelo tipo_suelo) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
+            
             em = getEntityManager();
             em.getTransaction().begin();
             em.persist(tipo_suelo);

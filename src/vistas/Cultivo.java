@@ -6,6 +6,9 @@
 package vistas;
 
 import controlador.Controladora;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import modelo.Tipo_suelo;
 
 /**
  *
@@ -22,6 +25,15 @@ public class Cultivo extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         control = new Controladora();
+        
+     DefaultListModel model = new DefaultListModel<>();  //crea y setea un Default list (contiene tipos de suelo)
+     List <Tipo_suelo> listaSuelos = control.TraerSuelos();
+
+    for (Tipo_suelo suelo : listaSuelos){
+        model.addElement( suelo.getDescripcion() );
+
+    }
+    jlist_suelos.setModel(model);
     }
 
     /**
@@ -43,6 +55,8 @@ public class Cultivo extends javax.swing.JFrame {
         TFcodigosuelo = new javax.swing.JTextField();
         agregarbtn = new javax.swing.JButton();
         atrasbtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jlist_suelos = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +81,12 @@ public class Cultivo extends javax.swing.JFrame {
 
         jLabel3.setText("Codigo de tipo suelo");
 
+        TFcodigosuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFcodigosueloActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -88,7 +108,7 @@ public class Cultivo extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,27 +144,45 @@ public class Cultivo extends javax.swing.JFrame {
             }
         });
 
+        jlist_suelos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jlist_suelos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(agregarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(agregarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(93, 93, 93)
                 .addComponent(atrasbtn)
-                .addGap(143, 143, 143))
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregarbtn)
-                    .addComponent(atrasbtn))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(atrasbtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(agregarbtn)))
+                .addContainerGap(104, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
 
         pack();
@@ -155,7 +193,8 @@ public class Cultivo extends javax.swing.JFrame {
     }//GEN-LAST:event_nombre_cultivo_txtActionPerformed
 
     private void atrasbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasbtnActionPerformed
-        // TODO add your handling code here:
+    dispose();
+
     }//GEN-LAST:event_atrasbtnActionPerformed
 
     private void agregarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarbtnActionPerformed
@@ -171,6 +210,10 @@ public class Cultivo extends javax.swing.JFrame {
     private void tfCodCultivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCodCultivoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCodCultivoActionPerformed
+
+    private void TFcodigosueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFcodigosueloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFcodigosueloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,6 +259,8 @@ public class Cultivo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> jlist_suelos;
     public javax.swing.JTextField nombre_cultivo_txt;
     public javax.swing.JTextField tfCodCultivo;
     // End of variables declaration//GEN-END:variables
