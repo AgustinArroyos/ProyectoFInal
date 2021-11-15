@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import controlador.Controladora;
+
 /**
  *
  * @author Asus
@@ -14,8 +16,13 @@ public class Lote extends javax.swing.JFrame {
     /**
      * Creates new form lotes
      */
+     Controladora control;
+    
     public Lote() {
         initComponents();
+         setVisible(true);
+        control = new Controladora();
+       
     }
 
     /**
@@ -30,32 +37,39 @@ public class Lote extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        nombresuelo_txt = new javax.swing.JTextField();
+        tfSuperficie = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         crearbtn = new javax.swing.JButton();
         atrasbtn = new javax.swing.JButton();
+        tftiposuelo = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        tfCodigolote = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel6.setText("AGREGAR LOTE");
 
-        jLabel1.setText("Nombre");
+        jLabel1.setText("Superficie");
 
         jLabel2.setText("Tipo de Suelo");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
         crearbtn.setText("CREAR");
+        crearbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearbtnActionPerformed(evt);
+            }
+        });
 
         atrasbtn.setText("ATRAS");
+
+        tftiposuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tftiposueloActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Codigo Lote");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,23 +79,26 @@ public class Lote extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(jLabel6))
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
+                        .addComponent(crearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(43, 43, 43)
-                                .addComponent(nombresuelo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(crearbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                            .addComponent(tfSuperficie, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                            .addComponent(tfCodigolote)
+                            .addComponent(tftiposuelo))
+                        .addGap(35, 262, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,12 +108,16 @@ public class Lote extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombresuelo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                    .addComponent(tfSuperficie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(tfCodigolote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tftiposuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(crearbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                     .addComponent(atrasbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -116,6 +137,25 @@ public class Lote extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tftiposueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tftiposueloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tftiposueloActionPerformed
+
+    private void crearbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearbtnActionPerformed
+
+ 
+        Long codigolote = Long.parseLong(tfCodigolote.getText());
+        int superficie = Integer. parseInt(tfSuperficie.getText());
+        Long codigosuelo = Long.parseLong(tftiposuelo.getText());
+                
+        control.altaLote(superficie,codigolote ,codigosuelo);
+ 
+
+
+
+     
+    }//GEN-LAST:event_crearbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,13 +195,14 @@ public class Lote extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atrasbtn;
-    private javax.swing.JButton crearbtn;
+    public javax.swing.JButton crearbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField nombresuelo_txt;
+    public javax.swing.JTextField tfCodigolote;
+    private javax.swing.JTextField tfSuperficie;
+    public javax.swing.JTextField tftiposuelo;
     // End of variables declaration//GEN-END:variables
 }

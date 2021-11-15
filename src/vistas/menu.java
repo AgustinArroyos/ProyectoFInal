@@ -31,11 +31,11 @@ public class menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,15 +52,12 @@ public class menu extends javax.swing.JFrame {
 
         jMenu4.setText("CREAR");
 
-        jMenuItem1.setText("Crear campo");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Crear Lotes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem1);
-
-        jMenuItem2.setText("Cear Lotes");
         jMenu4.add(jMenuItem2);
 
         jMenuItem3.setText("Agregar Tipo Suelo");
@@ -87,6 +84,14 @@ public class menu extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem5);
 
+        jMenuItem1.setText("Agregar Campo");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem1);
+
         jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
@@ -104,11 +109,6 @@ public class menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        initComponents();
-        setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         TipoDeSuelo suelo = new TipoDeSuelo();
@@ -128,6 +128,14 @@ public class menu extends javax.swing.JFrame {
         Estadov estado = new Estadov();
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Lote lote = new Lote();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Campo campo = new Campo();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,7 +175,7 @@ public class menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

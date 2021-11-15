@@ -26,6 +26,8 @@
     <class>modelo.Tipo_suelo</class>
     <class>modelo.Cultivo</class>
     <class>modelo.Estado</class>
+    <class>modelo.Lote</class>
+    <class>modelo.Campo</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tpfinal?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

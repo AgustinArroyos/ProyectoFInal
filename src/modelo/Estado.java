@@ -6,9 +6,11 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -18,6 +20,8 @@ public class Estado implements Serializable {
     long codEstado;
     @Basic 
     String nombreEstado;
+    @OneToMany(mappedBy = "estado")
+    private List<Campo> campos;
 
     public Estado() {
     }

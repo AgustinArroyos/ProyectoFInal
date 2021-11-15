@@ -7,8 +7,10 @@ package controlador;
 
 import Persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
+import modelo.Campo;
 import modelo.Cultivo;
 import modelo.Estado;
+import modelo.Lote;
 import modelo.Tipo_suelo;
 
 /**
@@ -66,12 +68,55 @@ public class Controladora {
   
     
     }
-    
-    
+     
     
        
+    public void altaLote (int superficie ,long idlote , long codsuelo){
+    
+        Tipo_suelo suelo1 = new Tipo_suelo();
+        
+        
+        suelo1 = controlPersis.buscarTiposuelo(codsuelo);
+        
+        
+        Lote lot = new Lote();
+       
+        lot.setEntero(superficie);
+        lot.setNumeroDeLote(idlote);
+        lot.setTiposuelo(suelo1);
+        
+        
+        controlPersis.altalote(lot);
+  
+    
+    }
     
     
+     public void altaCampo (Long codigocampo ,String nombre ,String Ubicacion , long codigoLote, long codigoEstado){
+    
+        Campo campo = new Campo();
+        Estado estado = new Estado();
+        Lote lote = new Lote();
+        
+        estado = controlPersis.buscarEstado(codigoEstado);
+        lote = controlPersis.buscarLote(codigoLote);
+        
+        campo.setCodCampo(codigocampo);
+        campo.setEstado(estado);
+        campo.setLote(lote);
+        campo.setNombre_campo(nombre);
+        campo.setUbicacionCampo(Ubicacion);
+        
+        controlPersis.altaCampo(campo);
+        
+        
+        
+        
+        
+        
+        
+    
+    }
     
     
     

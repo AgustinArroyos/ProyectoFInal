@@ -7,6 +7,7 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,6 +21,8 @@ public class Tipo_suelo implements Serializable {
     long codTipoSuelo;
     @Basic
     String Descripcion;
+    @OneToMany(mappedBy = "tiposuelo")
+    private List<Lote> lotes;
 
     public Tipo_suelo() {
     }

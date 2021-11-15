@@ -5,21 +5,35 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 
-
-public class Campo {
+@Entity
+public class Campo implements Serializable {
    
+    @Id
     long codCampo;
     
-    
+    @Basic
     String nombre_campo;
+    @Basic
     String ubicacionCampo;
+    
+    
+    @OneToOne
     Estado estado;
+    
+   
+    @OneToOne
     Lote lote;
+
+    public Campo() {
+    }
 
     
     public Campo(long codCampo, String nombre_campo, String ubicacionCampo, Estado estado, Lote lote) {

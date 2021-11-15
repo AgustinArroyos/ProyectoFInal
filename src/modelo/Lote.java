@@ -5,14 +5,29 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
-
-public class Lote {
+@Entity
+public class Lote implements Serializable {
+    @Id
     long numeroDeLote;
+    @Basic
     int entero;
+   
+    @ManyToOne
     Tipo_suelo tiposuelo;
+    @OneToMany(mappedBy = "lote")
+    private List<Campo> campos;
+
+    public Lote() {
+    }
 
     public Lote(long numeroDeLote, int entero, Tipo_suelo tiposuelo) {
         this.numeroDeLote = numeroDeLote;
